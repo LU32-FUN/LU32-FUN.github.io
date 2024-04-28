@@ -7,10 +7,14 @@ html {
 }
     
 body {
-    background-color:#000000;
-    background-image: url('assets/images/space.gif');
+    background-color:#00386d;
+    /*background-image: url('assets/images/space.gif');*/
     color:white;
     font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-size:12px;
 }
 
 h1 {
@@ -23,6 +27,10 @@ h1 {
     h1 {
         font-size: 6vw;
     }
+}
+
+#fun-content {
+    display:none;
 }
 
 .centered-stuff {

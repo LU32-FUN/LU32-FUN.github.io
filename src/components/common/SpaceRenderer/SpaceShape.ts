@@ -2,18 +2,13 @@ import * as Three from 'three'
 
 class SpaceShape {
     mesh: Three.Mesh
+    seed: number
     
-    constructor() {
-        const geometry = new Three.ConeGeometry(0.5, 1, 4)
-        const material = new Three.MeshPhongMaterial({ color: 0xff0000 })
+    constructor(radius: number=1, height: number=1, segments: number=3, color: number=0xffffff, seed: number=0) {
+        const geometry = new Three.ConeGeometry(radius, height, segments)
+        const material = new Three.MeshPhongMaterial({ color: color })
         this.mesh = new Three.Mesh(geometry, material)
-    }
-    
-    update(deltaTime: number) {
-        const rotationSpeed = 0.01 * deltaTime / 33
-        this.mesh.rotation.x += rotationSpeed
-        this.mesh.rotation.y += rotationSpeed
-        this.mesh.position.x = Math.sin(performance.now() / 1000) * 2
+        this.seed = seed
     }
     
     dispose() {

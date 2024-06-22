@@ -1,0 +1,22 @@
+
+.container {
+    position: absolute;
+    background-color: #ffffff;
+    width: 240px;
+    height: 120px;
+    color: black;
+    border: solid;
+    border-color: rgb(207, 207, 207);
+    border-width: 1px;
+    outline: solid;
+    outline-style: outset;
+    outline-width: 1px;
+}
+
+.title-bar {
+    background-color: #001488;
+    color: white;
+    padding: 2px 2px 2px 4px;
+    font-size: 12px;
+    user-select: none;
+}

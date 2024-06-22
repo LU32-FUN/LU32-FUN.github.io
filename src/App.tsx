@@ -1,12 +1,12 @@
-import './App.css'
+import { Router, Route } from '@solidjs/router'
+import Home from '@/components/pages/Home'
 
 function App() {
-
-  return (
-    <>
-      Hello LU32! :)
-    </>
-  )
+    return (
+        <Router>
+            <Route path="/home" component={Home} />
+        </Router>
+    )
 }
 
 export default App

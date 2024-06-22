@@ -6,9 +6,14 @@ type PopupProps = {
   text?    : string
   content? : Component
   buttons? : Component[]
+  width?   : number
+  height?  : number
 }
 
 function Popup(props: PopupProps): any {
+  const DEFAULT_WIDTH  = 240
+  const DEFAULT_HEIGHT = 120
+  
   const [position, setPosition] = createSignal({ x: 0, y: 0 })
   
   function startDrag(e: MouseEvent) {
@@ -38,8 +43,10 @@ function Popup(props: PopupProps): any {
   
   return (
     <div class='container' style={{
-      left : `${position().x}px`,
-      top  : `${position().y}px`
+      left   : `${position().x}px`,
+      top    : `${position().y}px`,
+      width  : props.width ? `${props.width}px` : `${DEFAULT_WIDTH}px`,
+      height : props.height ? `${props.height}px` : `${DEFAULT_HEIGHT}px`
     }}>
       <div class='title-bar' onMouseDown={startDrag}>
         {props.title}

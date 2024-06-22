@@ -7,7 +7,7 @@ function Home() {
     <div>
       <h1>Home</h1>
       <p>Welcome to the Home page!</p>
-      <Popup title="Hello World" />
+      <Popup title="Hello World" text="Welcome to LU32!"/>
     </div>
   )
 }

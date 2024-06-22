@@ -3,6 +3,7 @@ import './Popup.css'
 
 type PopupProps = {
   title    : string
+  text?    : string
   content? : Component
   buttons? : Component[]
 }
@@ -42,6 +43,9 @@ function Popup(props: PopupProps): any {
     }}>
       <div class='title-bar' onMouseDown={startDrag}>
         {props.title}
+      </div>
+      <div class='content'>
+        {props.text}
       </div>
     </div>
   )

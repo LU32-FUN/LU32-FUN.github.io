@@ -1,5 +1,5 @@
 import { Component, createSignal, onCleanup, Show } from "solid-js"
-import './Popup.css'
+import './styles.css'
 import { JSX } from "solid-js/h/jsx-runtime"
 
 type PopupProps = {

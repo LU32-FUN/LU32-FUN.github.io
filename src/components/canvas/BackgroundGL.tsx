@@ -7,19 +7,19 @@ function BackgroundGL() {
   let renderer : Three.WebGLRenderer
   let scene    : Three.Scene
   let camera   : Three.PerspectiveCamera
-  let pyramid     : Three.Mesh
+  let pyramid  : Three.Mesh
   
   function initRenderer() {
     scene = new Three.Scene()
     camera = new Three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
     camera.position.z = 5
     
-    renderer = new Three.WebGLRenderer({ antialias: true })
+    renderer = new Three.WebGLRenderer({ antialias: false })
     renderer.setSize(window.innerWidth, window.innerHeight)
     document.body.appendChild(renderer.domElement)
     canvas = renderer.domElement
     
-    const geometry = new Three.ConeGeometry(1, 1, 4)
+    const geometry = new Three.ConeGeometry(0.5, 1, 4)
     const material = new Three.MeshPhongMaterial({ color: 0xff0000 })
     pyramid = new Three.Mesh(geometry, material)
     scene.add(pyramid)

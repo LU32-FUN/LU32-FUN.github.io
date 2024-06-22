@@ -1,6 +1,7 @@
 
 import './Home.css'
 import Popup from '@/components/common/Popup'
+import LU32Img from '$/assets/lu32.png'
 
 function Home() {
   

@@ -7,7 +7,6 @@ type PopupProps = {
   text?     : string
   children? : Component|JSX.Element
   buttons?  : Component[]
-  
   width?    : number
   height?   : number
 }
@@ -57,7 +56,7 @@ function Popup(props: PopupProps): any {
       <div class='content'>
         {props.text}
         <Show when={props.children}>
-          {props.children}
+          {props.children as Component}
         </Show>
       </div>
       

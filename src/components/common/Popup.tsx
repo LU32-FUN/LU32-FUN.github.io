@@ -15,7 +15,13 @@ function Popup(props: PopupProps): any {
   const DEFAULT_WIDTH  = 240
   const DEFAULT_HEIGHT = 120
   
-  const [position, setPosition] = createSignal({ x: 0, y: 0 })
+  const WIDTH  = props.width ? props.width : DEFAULT_WIDTH
+  const HEIGHT = props.height ? props.height : DEFAULT_HEIGHT
+  
+  const INITIAL_X = (window.innerWidth  - WIDTH)  / 2
+  const INITIAL_Y = (window.innerHeight - HEIGHT) / 4
+  
+  const [position, setPosition] = createSignal({ x: INITIAL_X, y: INITIAL_Y })
   
   function startDrag(e: MouseEvent) {
     const INITIAL_X = position().x
@@ -46,8 +52,8 @@ function Popup(props: PopupProps): any {
     <div class='container' style={{
       left   : `${position().x}px`,
       top    : `${position().y}px`,
-      width  : props.width ? `${props.width}px` : `${DEFAULT_WIDTH}px`,
-      height : props.height ? `${props.height}px` : `${DEFAULT_HEIGHT}px`
+      width  : `${WIDTH}px`,
+      height : `${HEIGHT}px`
     }}>
       <div class='title-bar' onMouseDown={startDrag}>
         {props.title}
@@ -59,7 +65,6 @@ function Popup(props: PopupProps): any {
           {props.children as Component}
         </Show>
       </div>
-      
     </div>
   )
 }

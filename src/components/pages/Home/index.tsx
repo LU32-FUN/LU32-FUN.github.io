@@ -1,7 +1,7 @@
 
 import './styles.css'
 import Popup from '$/src/components/common/Popup'
-import BackgroundGL from '@/components/canvas/BackgroundGL'
+import SpaceRenderer from '@/components/common/SpaceRenderer'
 import LU32Img from '@/assets/images/LU32.png'
 
 function Home() {
@@ -11,7 +11,7 @@ function Home() {
         <img src={LU32Img} alt="LU32" />
         <br />
         <b>This domain is maintained by LB.</b>
-        <BackgroundGL />
+        <SpaceRenderer width={200} height={100} />
       </Popup>
     </div>
   )

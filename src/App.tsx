@@ -1,5 +1,5 @@
 import { Router, Route } from '@solidjs/router'
-import Home from '@/components/pages/home/Home'
+import Home from '$/src/components/pages/Home'
 
 function App() {
     return (

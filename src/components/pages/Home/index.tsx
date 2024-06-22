@@ -1,5 +1,5 @@
 
-import './Home.css'
+import './styles.css'
 import Popup from '$/src/components/common/Popup'
 import BackgroundGL from '@/components/canvas/BackgroundGL'
 import LU32Img from '@/assets/images/LU32.png'

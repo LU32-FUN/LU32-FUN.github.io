@@ -1,13 +1,15 @@
-import { Component, createSignal, onCleanup } from "solid-js"
+import { Component, createSignal, onCleanup, Show } from "solid-js"
 import './Popup.css'
+import { JSX } from "solid-js/h/jsx-runtime"
 
 type PopupProps = {
-  title    : string
-  text?    : string
-  content? : Component
-  buttons? : Component[]
-  width?   : number
-  height?  : number
+  title     : string
+  text?     : string
+  children? : Component|JSX.Element
+  buttons?  : Component[]
+  
+  width?    : number
+  height?   : number
 }
 
 function Popup(props: PopupProps): any {
@@ -51,9 +53,14 @@ function Popup(props: PopupProps): any {
       <div class='title-bar' onMouseDown={startDrag}>
         {props.title}
       </div>
+      
       <div class='content'>
         {props.text}
+        <Show when={props.children}>
+          {props.children}
+        </Show>
       </div>
+      
     </div>
   )
 }

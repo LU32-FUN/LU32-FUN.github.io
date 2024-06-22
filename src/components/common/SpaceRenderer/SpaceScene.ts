@@ -1,7 +1,7 @@
 import SpaceShape from './SpaceShape'
 import * as Three from 'three'
 
-class SpaceRenderer {
+class SpaceScene {
     width    : number
     height   : number
     shapes   : SpaceShape[]
@@ -59,4 +59,4 @@ class SpaceRenderer {
     }
 }
 
-export default SpaceRenderer
+export default SpaceScene

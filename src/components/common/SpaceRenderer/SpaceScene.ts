@@ -22,7 +22,7 @@ class SpaceScene {
         this.shapes   = shapes
         this.canvas   = document.createElement('canvas')
         this.scene    = new Three.Scene()
-        this.renderer = new Three.WebGLRenderer({ antialias: ANTI_ALIASED })
+        this.renderer = new Three.WebGLRenderer({ antialias: ANTI_ALIASED, alpha: true })
         this.camera   = new Three.PerspectiveCamera(FOV, ASPECT_RATIO, NEAR, FAR)
         this.setSize(width, height)
         

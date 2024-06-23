@@ -12,20 +12,30 @@ function SpaceRenderer(props: SpaceRendererProps) {
   
   onMount(() => {
     const shapes = [
-      new SpaceShape(1, 2, 3, 0xff0000, 0.1),
-      new SpaceShape(2, 3, 4, 0xffff00, 0.8),
-      new SpaceShape(1, 1, 3, 0x00ffff, 1.6),
+      new SpaceShape(
+        { radius: 1, height: 2, segments: 4, color: 0xff0000 },
+        { position: { x: 6, y: -1, z: 2 }, rotation: { x: 0.02, y: 0, z: 0.03 } }
+      ),
+      new SpaceShape(
+        { radius: 1, height: 2, segments: 3, color: 0x00ff00 },
+        { position: { x: 2, y: 18, z: 1 }, rotation: { x: 0, y: 0.02, z: 0 } }
+      ),
+      new SpaceShape(
+        { radius: 1, height: 2, segments: 4, color: 0x0000ff },
+        { position: { x: -4, y: 7, z: 24 }, rotation: { x: 0.01, y: 0.005, z: 0.01 } }
+      )
     ]
     
     shapes.forEach(shape => spaceScene.addShape(shape))
     
-    const render = () => {
+    function render(currentTime: number) {
       for (let shape of shapes) {
-        shape.mesh.rotation.x += 0.01 * shape.seed
-        shape.mesh.rotation.y += 0.01 * shape.seed
-        shape.mesh.position.x = Math.sin(shape.mesh.rotation.x) + shape.seed*5-5
-        shape.mesh.position.y = Math.cos(shape.mesh.rotation.y) * shape.seed
-        shape.mesh.position.z = 1 * shape.seed
+        shape.mesh.position.x = Math.sin(shape.velocity.position.x + currentTime * 0.002)
+        shape.mesh.position.y = Math.cos(shape.velocity.position.y + currentTime * 0.002)
+        shape.mesh.position.z = Math.sin(shape.velocity.position.z + currentTime * 0.002)
+        shape.mesh.rotation.x += shape.velocity.rotation.x
+        shape.mesh.rotation.y += shape.velocity.rotation.y
+        shape.mesh.rotation.z += shape.velocity.rotation.z
       }
       
       spaceScene.render()

@@ -8,11 +8,11 @@ type ContainerProps = {
 
 function Container(props: ContainerProps) {
   
-  const STYLE = {
-    display        : 'flex',
-    flexDirection  : 'row',
-    alignItems     : props.align   || 'center',
-    justifyContent : props.justify || 'center'
+  const STYLE: JSX.CSSProperties = {
+    'display'         : 'flex',
+    'flex-direction'  : 'column',
+    'align-items'     : props.align   || 'center',
+    'justify-content' : props.justify || 'center',
   }
   
   return (

@@ -2,4 +2,14 @@
 body {
     background-image: url('src/assets/images/brick.png');
     color: white;
+    animation: slideBackground 1s linear infinite;
 }
+
+@keyframes slideBackground {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 48px 64px; /* Adjust these values based on the size of your tiles */
+    }
+  }

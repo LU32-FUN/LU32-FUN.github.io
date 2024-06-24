@@ -22,7 +22,7 @@ function SpaceRenderer(props: SpaceRendererProps) {
       0x827717, 0x6D4C41, 0x757575, 0x546E7A, 0x5D4037
     ]
     
-    const OBJECTS = 6
+    const OBJECTS = 7
     
     for (let i = 0; i < OBJECTS; i++) {
       const RADIUS   = Math.random() * 2 + 1.5

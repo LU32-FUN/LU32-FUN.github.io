@@ -3,10 +3,7 @@
 }
 
 :root {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
+  font-family: "Red Hat Display", Verdana, Geneva, Tahoma, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

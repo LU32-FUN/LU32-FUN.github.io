@@ -22,12 +22,12 @@ function SpaceRenderer(props: SpaceRendererProps) {
       0x827717, 0x6D4C41, 0x757575, 0x546E7A, 0x5D4037
     ]
     
-    const OBJECTS = 60
+    const OBJECTS = 5
     
     for (let i = 0; i < OBJECTS; i++) {
-      const RADIUS   = Math.random() * 0.2 + 1
-      const HEIGHT   = Math.random() * 0.5 + 1
-      const SEGMENTS = Math.floor(Math.random() * 3) + 2
+      const RADIUS   = Math.random() * 2 + 1.5
+      const HEIGHT   = 2
+      const SEGMENTS = Math.floor(Math.random() * 1) + 3
       const COLOR    = DESATURATED_COLORS[Math.floor(Math.random() * DESATURATED_COLORS.length)]
       const POSITION = { x: Math.random() * 48 - 24, y: Math.random() * 48 - 24, z: Math.random() * 200 - 100 }
       const ROTATION = { x: Math.random() * 0.01, y: Math.random() * 0.01, z: Math.random() * 0.05 }
@@ -44,7 +44,7 @@ function SpaceRenderer(props: SpaceRendererProps) {
       for (let shape of shapes) {
         shape.mesh.position.x = Math.sin(shape.velocity.position.x + currentTime * 0.0001) * 6
         shape.mesh.position.y = Math.cos(shape.velocity.position.y + currentTime * 0.0001) * 6
-        shape.mesh.position.z = Math.cos(shape.velocity.position.z + currentTime * 0.0005) * 20
+        shape.mesh.position.z = Math.cos(shape.velocity.position.z + currentTime * 0.0003) * 20
         shape.mesh.rotation.x += shape.velocity.rotation.x
         shape.mesh.rotation.y += shape.velocity.rotation.y
         shape.mesh.rotation.z += shape.velocity.rotation.z

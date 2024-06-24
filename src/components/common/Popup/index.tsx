@@ -19,7 +19,7 @@ function Popup(props: PopupProps): any {
   const HEIGHT = props.height ? props.height : DEFAULT_HEIGHT
   
   const INITIAL_X = (window.innerWidth - WIDTH) / 2
-  const INITIAL_Y = 40
+  const INITIAL_Y = (window.innerHeight - HEIGHT) / 2
   
   const [position, setPosition] = createSignal({ x: INITIAL_X, y: INITIAL_Y })
   

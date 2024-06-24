@@ -1,10 +1,9 @@
 import { JSX } from 'solid-js'
-import './index.css'
 
 type ContainerProps = {
   align?    : 'center' | 'left' | 'right'
   justify?  : 'center' | 'left' | 'right'
-  children? : JSX.Element[]
+  children? : JSX.Element[] | JSX.Element
 }
 
 function Container(props: ContainerProps) {
@@ -17,7 +16,7 @@ function Container(props: ContainerProps) {
   }
   
   return (
-    <div class='container' style={STYLE}>
+    <div style={STYLE}>
       {props.children}
     </div>
   )

@@ -2,6 +2,7 @@
 .container {
     position: absolute;
     background-color: #c4c4c4;
+    background-image: url('src/assets/images/concrete.png');
     width: 240px;
     height: 120px;
     color: black;
@@ -17,12 +18,12 @@
     background-color: #001488;
     color: white;
     padding: 2px 2px 2px 4px;
-    font-size: 12px;
+    font-size: 14px;
     user-select: none;
 }
 
 .content {
     padding: 2px 2px 2px 4px;
-    font-size: 12px;
+    font-size: 14px;
     user-select: none;
 }

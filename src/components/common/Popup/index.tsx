@@ -1,5 +1,5 @@
 import { Component, createSignal, onCleanup, Show } from "solid-js"
-import './styles.css'
+import styles from './index.module.css'
 import { JSX } from "solid-js/h/jsx-runtime"
 
 type PopupProps = {
@@ -49,17 +49,17 @@ function Popup(props: PopupProps): any {
   })
   
   return (
-    <div class='container' style={{
+    <div class={styles['container']} style={{
       left   : `${position().x}px`,
       top    : `${position().y}px`,
       width  : `${WIDTH}px`,
       height : `${HEIGHT}px`
     }}>
-      <div class='title-bar' onMouseDown={startDrag}>
+      <div class={styles['title-bar']} onMouseDown={startDrag}>
         {props.title}
       </div>
       
-      <div class='content'>
+      <div class={styles['content']}>
         {props.text}
         <Show when={props.children}>
           {props.children as Component}

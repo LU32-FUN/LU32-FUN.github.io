@@ -1,5 +1,5 @@
 
-import './styles.css'
+import styles        from './styles.module.css'
 import Popup         from '$/src/components/common/Popup'
 import SpaceRenderer from '@/components/common/SpaceRenderer'
 import LU32Img       from '@/assets/images/LU32.png'
@@ -13,7 +13,7 @@ function Home() {
       <Popup title="NOTICE" width={256} height={300}>
         
         <Container align='center' justify='center'>
-          <img src={LU32Img} alt="LU32" />
+          <img src={LU32Img} alt="LU32" class={styles['logo']} />
         </Container>
         
         <Container align='center'>

@@ -7,9 +7,13 @@ body {
 
 @keyframes slideBackground {
     from {
-      background-position: 0 0;
+        background-position: 0 0;
     }
     to {
-      background-position: 48px 64px; /* Adjust these values based on the size of your tiles */
+        background-position: 48px 64px; /* Adjust these values based on the size of your tiles */
     }
-  }
+}
+
+.logo {
+    padding: 12px;
+}

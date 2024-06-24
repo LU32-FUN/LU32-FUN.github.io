@@ -22,7 +22,7 @@ function SpaceRenderer(props: SpaceRendererProps) {
       0x827717, 0x6D4C41, 0x757575, 0x546E7A, 0x5D4037
     ]
     
-    const OBJECTS = 5
+    const OBJECTS = 6
     
     for (let i = 0; i < OBJECTS; i++) {
       const RADIUS   = Math.random() * 2 + 1.5
@@ -44,7 +44,7 @@ function SpaceRenderer(props: SpaceRendererProps) {
       for (let shape of shapes) {
         shape.mesh.position.x = Math.sin(shape.velocity.position.x + currentTime * 0.0001) * 6
         shape.mesh.position.y = Math.cos(shape.velocity.position.y + currentTime * 0.0001) * 6
-        shape.mesh.position.z = Math.cos(shape.velocity.position.z + currentTime * 0.0003) * 20
+        shape.mesh.position.z = Math.cos(shape.velocity.position.z + currentTime * 0.0003) * 30
         shape.mesh.rotation.x += shape.velocity.rotation.x
         shape.mesh.rotation.y += shape.velocity.rotation.y
         shape.mesh.rotation.z += shape.velocity.rotation.z

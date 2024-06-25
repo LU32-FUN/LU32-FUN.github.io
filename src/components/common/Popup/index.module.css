@@ -12,7 +12,19 @@
     outline: solid;
     outline-style: outset;
     outline-width: 1px;
+    animation: zoomInEffect 0.3s linear;
 }
+
+@keyframes zoomInEffect {
+    from {
+        transform: scale(0.2);
+        
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 
 .title-bar {
     background-color: #001488;

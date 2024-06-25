@@ -1,6 +1,7 @@
 import { onCleanup, onMount } from 'solid-js'
 import SpaceScene from './SpaceScene'
 import SpaceShape from './SpaceShape'
+import css        from './index.module.css'
 
 type SpaceRendererProps = {
   width  : number
@@ -62,7 +63,7 @@ function SpaceRenderer(props: SpaceRendererProps) {
   })
   
   return (
-    <div>
+    <div class={css.container}>
       {spaceScene.canvas}
     </div>
   )

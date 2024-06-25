@@ -14,6 +14,20 @@ body {
     }
 }
 
+.button-container {
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.button {
+    padding: 2px;
+    width: 45%;
+}
+
 .logo {
     padding: 12px;
 }
+

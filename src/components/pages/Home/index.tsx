@@ -17,7 +17,7 @@ function Home() {
         </Container>
         
         <Container align='center'>
-          <b>This domain is maintained by LB.</b>
+          This domain is maintained by LB.
         </Container>
         
       </Popup>

@@ -4,6 +4,7 @@ import Popup         from '$/src/components/common/Popup'
 import SpaceRenderer from '@/components/common/SpaceRenderer'
 import LU32Img       from '@/assets/images/LU32.png'
 import Container     from "@/components/common/Container"
+import AppExplorer   from '@/components/common/AppExplorer'
 import { createSignal, Show }      from 'solid-js'
 
 function Home() {
@@ -45,9 +46,7 @@ function Home() {
       </Show>
       
       <Show when={showAppManager()}>
-        <Popup title="EXPLORER.L32" width={500} height={256}>
-          Welcome to the app explorer
-        </Popup>
+        <AppExplorer />
       </Show>
     </div>
   )

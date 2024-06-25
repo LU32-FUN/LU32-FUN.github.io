@@ -28,7 +28,7 @@ class SpaceScene {
         
         this.camera.position.z = 5
         this.canvas = this.renderer.domElement
-        this.renderer.setPixelRatio(window.devicePixelRatio * 0.75)
+        this.renderer.setPixelRatio(window.devicePixelRatio * 0.40)
         
         const DIRECTIONAL_LIGHT = new Three.DirectionalLight(0xffffff, 1)
         DIRECTIONAL_LIGHT.position.set(1, 1, 1)

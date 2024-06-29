@@ -9,7 +9,7 @@ type PopupProps = {
   buttons?  : Component[]
   width?    : number
   height?   : number
-  closable? : boolean
+  onClose?  : () => void
 }
 
 function Popup(props: PopupProps): any {
@@ -23,6 +23,7 @@ function Popup(props: PopupProps): any {
   const INITIAL_Y = (window.innerHeight - HEIGHT) / 2
   
   const [position, setPosition] = createSignal({ x: INITIAL_X, y: INITIAL_Y })
+  const [shown, setShown] = createSignal(true)
   
   function startDrag(e: MouseEvent) {
     const INITIAL_X = position().x
@@ -44,32 +45,39 @@ function Popup(props: PopupProps): any {
     document.addEventListener('mouseup', stopDrag)
   }
   
+  function closePopup() {
+    props.onClose && props.onClose()
+    setShown(false)
+  }
+  
   onCleanup(() => {
     document.removeEventListener('mousemove', startDrag)
     document.removeEventListener('mouseup', startDrag)
   })
   
   return (
-    <div class={styles['container']} style={{
-      left   : `${position().x}px`,
-      top    : `${position().y}px`,
-      width  : `${WIDTH}px`,
-      height : `${HEIGHT}px`
-    }}>
-      <div class={styles['title-bar']} onMouseDown={startDrag}>
-        {props.title}
-        <Show when={props.closable}>
-          <button class={styles['close-button']}>X</button>
-        </Show>
+    <Show when={shown()}>
+      <div class={styles['container']} style={{
+        left   : `${position().x}px`,
+        top    : `${position().y}px`,
+        width  : `${WIDTH}px`,
+        height : `${HEIGHT}px`
+      }}>
+        <div class={styles['title-bar']} onMouseDown={startDrag}>
+          {props.title}
+          <Show when={props.onClose !== undefined}>
+            <button class={styles['close-button']} onClick={closePopup}>X</button>
+          </Show>
+        </div>
+        
+        <div class={styles['content']}>
+          {props.text}
+          <Show when={props.children}>
+            {props.children as Component}
+          </Show>
+        </div>
       </div>
-      
-      <div class={styles['content']}>
-        {props.text}
-        <Show when={props.children}>
-          {props.children as Component}
-        </Show>
-      </div>
-    </div>
+    </Show>
   )
 }
 

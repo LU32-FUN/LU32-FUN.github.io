@@ -8,7 +8,7 @@ function Settings() {
   }
   
   return (
-    <Popup title="Settings" width={300} height={300} closable>
+    <Popup title="Settings" width={300} height={300} onClose={() => "hi"}>
       <button onClick={toggle3DObjects}> Toggle 3D Objects </button>
       <div>Showing 3D objects? {GlobalSettings.settings.show3DBackground ? "Yes" : "No"}</div>
     </Popup>

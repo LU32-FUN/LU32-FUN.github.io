@@ -1,11 +1,12 @@
 
-import styles        from './styles.module.css'
-import Popup         from '$/src/components/common/Popup'
-import SpaceRenderer from '@/components/common/SpaceRenderer'
-import LU32Img       from '@/assets/images/LU32.png'
-import Container     from "@/components/common/Container"
-import AppExplorer   from '@/components/common/AppExplorer'
-import ExplorerMP3   from '@/assets/audio/Explorer.mp3'
+import styles         from './styles.module.css'
+import Popup          from '$/src/components/common/Popup'
+import SpaceRenderer  from '@/components/common/SpaceRenderer'
+import LU32Img        from '@/assets/images/LU32.png'
+import Container      from "@/components/common/Container"
+import AppExplorer    from '@/components/common/AppExplorer'
+import ExplorerMP3    from '@/assets/audio/Explorer.mp3'
+import GlobalSettings from '@/store/GlobalSettings'
 
 import { createSignal, Show } from 'solid-js'
 
@@ -25,7 +26,9 @@ function Home() {
   
   return (
     <div>
-      <SpaceRenderer width={window.innerWidth} height={window.innerHeight} />
+      <Show when={GlobalSettings.settings.show3DBackground}>
+        <SpaceRenderer width={window.innerWidth} height={window.innerHeight} />
+      </Show>
       
       <Show when={showWelcome()}>
         <Popup title="NOTICE" width={300} height={300}>

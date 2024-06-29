@@ -7,6 +7,7 @@ import Container      from "@/components/common/Container"
 import AppExplorer    from '@/components/common/AppExplorer'
 import ExplorerMP3    from '@/assets/audio/Explorer.mp3'
 import GlobalSettings from '@/store/GlobalSettings'
+import MusicManager   from '@/store/MusicManager'
 
 import { createSignal, Show } from 'solid-js'
 
@@ -22,6 +23,8 @@ function Home() {
   function onDecline() {
     setShowWelcome(false)
   }
+  
+  MusicManager.setCurrentSong(ExplorerMP3)
   
   return (
     <div>
@@ -50,7 +53,9 @@ function Home() {
       </Show>
       
       <Show when={showAppManager()}>
-        <audio src={ExplorerMP3} loop autoplay />
+        <Show when={MusicManager.getCurrentSong() !== null}>
+          <audio src={ExplorerMP3} loop autoplay />
+        </Show>
         <AppExplorer />
       </Show>
     </div>

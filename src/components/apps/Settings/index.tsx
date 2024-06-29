@@ -1,10 +1,13 @@
 
 import AppIcon from '@/components/apps/AppIcon'
+import Popup from '@/components/common/Popup'
 
 function Settings() {
   
   return (
-    <AppIcon name="Settings" />
+    <Popup title="Settings" width={300} height={300}>
+      
+    </Popup>
   )
 }
 

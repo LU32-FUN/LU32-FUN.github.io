@@ -53,8 +53,8 @@ function Home() {
       </Show>
       
       <Show when={showAppManager()}>
-        <Show when={MusicManager.getCurrentSong() !== null}>
-          <audio src={ExplorerMP3} loop autoplay />
+        <Show when={MusicManager.getCurrentSong()}>
+          <audio src={MusicManager.getCurrentSong()} loop autoplay />
         </Show>
         <AppExplorer />
       </Show>

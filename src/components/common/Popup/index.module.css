@@ -44,4 +44,8 @@
 button {
     background-image: url('src/assets/images/concrete.png');
     filter: hue-rotate(180deg) saturate(10);
+    outline: solid;
+    outline-width: 1px;
+    outline-color: #3d3d3d;
+    border-radius: 1px;
 }

@@ -11,7 +11,6 @@ import GlobalSettings from '@/store/GlobalSettings'
 import { createSignal, Show } from 'solid-js'
 
 function Home() {
-  const [selectedOption, setSelectedOption] = createSignal('')
   const [showWelcome, setShowWelcome] = createSignal(true)
   const [showAppManager, setShowAppManager] = createSignal(false)
   
@@ -31,7 +30,7 @@ function Home() {
       </Show>
       
       <Show when={showWelcome()}>
-        <Popup title="NOTICE" width={300} height={300}>
+        <Popup title="NOTICE" width={300} height={256}>
           <Container align='center' justify='center'>
             <img src={LU32Img} alt="LU32" class={styles['logo']} />
           </Container>
@@ -39,14 +38,6 @@ function Home() {
           <Container align='center'>
             This domain is maintained by LB.
           </Container>
-          
-          <select value={selectedOption()} onChange={(e) => setSelectedOption(e.target.value)}>
-            
-            <option value=""> Choose your destination </option>
-            <option value="classic"> Deprecated </option>
-            <option value="fun"> LU32 </option>
-            
-          </select>
           
           <Container align='center'>
             <div class={styles['button-container']}>

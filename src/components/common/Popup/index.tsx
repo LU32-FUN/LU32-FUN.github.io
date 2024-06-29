@@ -9,6 +9,7 @@ type PopupProps = {
   buttons?  : Component[]
   width?    : number
   height?   : number
+  closable? : boolean
 }
 
 function Popup(props: PopupProps): any {
@@ -57,6 +58,9 @@ function Popup(props: PopupProps): any {
     }}>
       <div class={styles['title-bar']} onMouseDown={startDrag}>
         {props.title}
+        <Show when={props.closable}>
+          <button class={styles['close-button']}>X</button>
+        </Show>
       </div>
       
       <div class={styles['content']}>

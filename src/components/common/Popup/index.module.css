@@ -32,6 +32,15 @@
     padding: 2px 2px 2px 4px;
     font-size: 14px;
     user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 24px;
+    margin: 1px;
+}
+
+.close-button {
+    margin: 1px;
 }
 
 .content {

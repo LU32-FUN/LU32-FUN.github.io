@@ -5,14 +5,14 @@ import Container from '@/components/common/Container'
 
 function AppExplorer() {
   return (
-    <Popup title="EXPLORER.L32" width={500} height={256}>
+    <Popup title="LU32 Explorer" width={500} height={256}>
       <Container align='center' justify='center'>
         <div class={css["app-container"]}>
-          hi
+          
         </div>
       </Container>
       <div>
-        <button> Execute </button>
+        <button> PLAY </button>
       </div>
     </Popup>
   )

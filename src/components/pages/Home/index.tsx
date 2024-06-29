@@ -5,7 +5,9 @@ import SpaceRenderer from '@/components/common/SpaceRenderer'
 import LU32Img       from '@/assets/images/LU32.png'
 import Container     from "@/components/common/Container"
 import AppExplorer   from '@/components/common/AppExplorer'
-import { createSignal, Show }      from 'solid-js'
+import ExplorerMP3   from '@/assets/audio/Explorer.mp3'
+
+import { createSignal, Show } from 'solid-js'
 
 function Home() {
   
@@ -46,6 +48,7 @@ function Home() {
       </Show>
       
       <Show when={showAppManager()}>
+        <audio src={ExplorerMP3} loop autoplay />
         <AppExplorer />
       </Show>
     </div>

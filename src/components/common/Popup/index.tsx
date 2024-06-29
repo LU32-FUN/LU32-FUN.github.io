@@ -12,6 +12,8 @@ type PopupProps = {
   onClose?  : () => void
 }
 
+// FIXME: Button hitboxes are horizontally offset by ~8px
+
 function Popup(props: PopupProps): any {
   const DEFAULT_WIDTH  = 240
   const DEFAULT_HEIGHT = 120
